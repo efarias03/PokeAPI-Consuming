@@ -1,0 +1,35 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(0, 4, 255, 0.507);
+  width: 12rem;
+  height: 10rem;
+}
+.card .card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.card .card-content img {
+  height: 5rem;
+}
+.card .card-content .card-number {
+  position: relative;
+  height: 1rem;
+  background-color: aliceblue;
+  top: -2rem;
+  right: -4.5rem;
+  font-size: 2rem;
+}
+.card .card-content .card-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  bottom: 37.5rem;
+  gap: 4rem;
+}/*# sourceMappingURL=index.css.map */
