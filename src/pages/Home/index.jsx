@@ -5,21 +5,31 @@ import axios from "axios";
 import "./index.css"
 
 export const Home = () => {
-    axios
-        .get("https://pokeapi.co/api/v2/pokemon?limit=50")
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err));
+    const [pokemons, setPokemons] = useState([]);
+
+    useEffect(() => {
+        getPokemons();
+    }, []);
+
+    const getPokemons = () => {
+        axios
+            .get("https://pokeapi.co/api/v2/pokemon?limit=20")
+            .then((res) => setPokemons(res.data.results))
+            .catch((err) => console.log(err));
+
+    };
     return (
         <div>
             <Navbar />
             <div className="main-content">
-                <p>Hello World</p>
-                <div className="pokemons-grid">
-                    <ul>
+                <div className="flex-container">
+                    <ul className="pokemons-flex">
                         <li>
                             <PokemonCard />
                         </li>
-
+                        <li>
+                            <PokemonCard />
+                        </li>
                         <li>
                             <PokemonCard />
                         </li>

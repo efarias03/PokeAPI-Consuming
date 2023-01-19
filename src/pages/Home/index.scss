@@ -1,20 +1,95 @@
 .main-content {
-    margin-top: 10rem;
+    margin-top: 15rem;
     height: 100%;
     width: 100%;
 
-    .pokemons-grid {
-        background-color: aqua;
+    .flex-container {
+        
         width: 100%;
-        display: grid;
-
-        ul {
+        height: 100%;
+        
+    
+        .pokemons-flex {
             list-style: none;
-            display: grid;
+            background-color: aqua;
+            max-width: 1268px;
 
-            grid-template-columns: 1fr 1fr;
-            grid-auto-columns: 100px;
+            padding: 32px;
+
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
         }
     }
+}
 
+@media (min-width: 375px) {
+    .main-content {
+        .flex-container {
+            .pokemons-flex {
+                margin: 35px;
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: 425px) {
+    .main-content {
+        .flex-container {
+            .pokemons-flex {
+                margin: 45px;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 510px) {
+    .main-content {
+        .flex-container {
+            .pokemons-flex {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 0;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 768px) {
+    .main-content {
+        .flex-container {
+            .pokemons-flex {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .main-content {
+        .flex-container {
+            .pokemons-flex {
+                grid-template-columns: repeat(4, 1fr);
+                padding: 10px;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 2560px) {
+    .main-content {
+        .flex-container {
+            .pokemons-flex {
+                grid-template-columns: repeat(5, 1fr);
+                padding: 10px;
+                margin: 600px;
+            }
+        }
+    }
 }

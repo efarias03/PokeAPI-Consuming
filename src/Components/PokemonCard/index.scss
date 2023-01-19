@@ -1,15 +1,12 @@
 @use "../../styles/base";
 
 
-.card {
-    @include base.flex-center($direction: column);
-    background: rgba(0, 4, 255, 0.507);
-    width: 12rem;
-    height: 10rem;
-
-
     .card-content {
         @include base.flex-center($direction: column);
+        background: rgba(0, 4, 255, 0.507);
+        min-width: 12.8rem;
+        max-width: 25rem;
+        height: 10rem;
 
         img {
             height: 5rem;
@@ -19,16 +16,15 @@
             position: relative;
             height: 1rem;
             background-color: aliceblue;
-            top: -2rem;
+            top: -1rem;
             right: -4.5rem;
             font-size: 2rem;
         }
 
         .card-description {
             @include base.flex-center;
-            position: absolute;
-            bottom: 37.5rem;
+            position: relative;
+            bottom: -1rem;
             gap: 4rem;
         }
     }
-}
