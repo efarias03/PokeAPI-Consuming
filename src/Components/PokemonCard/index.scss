@@ -3,22 +3,30 @@
 
     .card-content {
         @include base.flex-center($direction: column);
-        background: rgba(0, 4, 255, 0.507);
+        background: #f2f2f2;
         min-width: 12.8rem;
         max-width: 25rem;
         height: 10rem;
+        border-radius: 10px;
 
         img {
-            height: 5rem;
+            width: auto;
+            height: 60%;
+
+            filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.527));
         }
 
-        .card-number {
+        .pokemon-id {
             position: relative;
             height: 1rem;
-            background-color: aliceblue;
             top: -1rem;
             right: -4.5rem;
-            font-size: 2rem;
+
+            font-weight: 600;
+            font-size: 2.5rem;
+
+            color: transparent;
+            -webkit-text-stroke: 2px #000;
         }
 
         .card-description {
@@ -26,5 +34,21 @@
             position: relative;
             bottom: -1rem;
             gap: 4rem;
+
+
+            .pokemon-name {
+                position: relative;
+                top: -10px;
+                font-size: large;
+                text-transform: capitalize;
+            }
+
+            .pokemon-type {
+                position: relative;
+                top: -10px;
+                text-transform: uppercase;
+                
+                filter: drop-shadow(0 0 13px #000000);
+            }
         }
     }

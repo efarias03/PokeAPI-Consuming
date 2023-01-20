@@ -8,4 +8,8 @@
 
 body {
   height: 200vh;
+  background-color: #fff;
+}
+body .bg {
+  background-color: antiquewhite;
 }/*# sourceMappingURL=index.css.map */

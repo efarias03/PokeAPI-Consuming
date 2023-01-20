@@ -1,17 +1,15 @@
 .main-content {
-    margin-top: 15rem;
+    margin-top: 10rem;
     height: 100%;
     width: 100%;
 
-    .flex-container {
-        
+    .grid-container {
         width: 100%;
         height: 100%;
-        
     
-        .pokemons-flex {
+        .pokemons-grid {
+            
             list-style: none;
-            background-color: aqua;
             max-width: 1268px;
 
             padding: 32px;
@@ -26,8 +24,8 @@
 
 @media (min-width: 375px) {
     .main-content {
-        .flex-container {
-            .pokemons-flex {
+        .grid-container {
+            .pokemons-grid {
                 margin: 35px;
             }
         }
@@ -38,8 +36,8 @@
 
 @media (min-width: 425px) {
     .main-content {
-        .flex-container {
-            .pokemons-flex {
+        .grid-container {
+            .pokemons-grid {
                 margin: 45px;
             }
         }
@@ -49,8 +47,8 @@
 
 @media (min-width: 510px) {
     .main-content {
-        .flex-container {
-            .pokemons-flex {
+        .grid-container {
+            .pokemons-grid {
                 grid-template-columns: repeat(2, 1fr);
                 padding: 0;
             }
@@ -61,8 +59,8 @@
 
 @media (min-width: 768px) {
     .main-content {
-        .flex-container {
-            .pokemons-flex {
+        .grid-container {
+            .pokemons-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
@@ -72,10 +70,11 @@
 
 @media (min-width: 1024px) {
     .main-content {
-        .flex-container {
-            .pokemons-flex {
+        .grid-container {
+            .pokemons-grid {
                 grid-template-columns: repeat(4, 1fr);
                 padding: 10px;
+                margin: auto;
             }
         }
     }
@@ -84,11 +83,11 @@
 
 @media (min-width: 2560px) {
     .main-content {
-        .flex-container {
-            .pokemons-flex {
+        .grid-container {
+            .pokemons-grid {
                 grid-template-columns: repeat(5, 1fr);
                 padding: 10px;
-                margin: 600px;
+                margin: auto;
             }
         }
     }
