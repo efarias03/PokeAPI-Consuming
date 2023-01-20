@@ -10,9 +10,6 @@ body {
   background-color: #fff;
 }
 body .bg {
+  height: 500vh;
   background: #f2f2f2;
-}
-
-::-webkit-scrollbar {
-  display: none;
 }/*# sourceMappingURL=index.css.map */
