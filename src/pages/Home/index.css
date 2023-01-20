@@ -1,5 +1,4 @@
 .main-content {
-  margin-top: 10rem;
   height: 100%;
   width: 100%;
 }
@@ -8,9 +7,11 @@
   height: 100%;
 }
 .main-content .grid-container .pokemons-grid {
+  background-color: #fff;
   list-style: none;
+  height: 100%;
   max-width: 1268px;
-  padding: 32px;
+  padding: 10rem 32px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr;
@@ -19,36 +20,37 @@
 
 @media (min-width: 375px) {
   .main-content .grid-container .pokemons-grid {
-    margin: 35px;
+    margin: 0 35px;
   }
 }
 @media (min-width: 425px) {
   .main-content .grid-container .pokemons-grid {
-    margin: 45px;
+    margin: 0 45px;
   }
 }
-@media (min-width: 510px) {
+@media (min-width: 586px) {
   .main-content .grid-container .pokemons-grid {
     grid-template-columns: repeat(2, 1fr);
-    padding: 0;
+    padding: 10rem 10px;
   }
 }
 @media (min-width: 768px) {
   .main-content .grid-container .pokemons-grid {
     grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
   }
 }
 @media (min-width: 1024px) {
   .main-content .grid-container .pokemons-grid {
     grid-template-columns: repeat(4, 1fr);
-    padding: 10px;
-    margin: auto;
+    padding: 10rem 10px;
+    margin: 0 auto;
   }
 }
 @media (min-width: 2560px) {
   .main-content .grid-container .pokemons-grid {
     grid-template-columns: repeat(5, 1fr);
-    padding: 10px;
-    margin: auto;
+    padding: 10rem 0;
+    margin: 0 auto;
   }
 }/*# sourceMappingURL=index.css.map */

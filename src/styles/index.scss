@@ -10,10 +10,13 @@
 }
 
 body {
-    height: 200vh;
     background-color: #fff;
 
     .bg {
-        background-color: antiquewhite;
+        background: #f2f2f2;
     }
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

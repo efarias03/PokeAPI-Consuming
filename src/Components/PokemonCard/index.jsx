@@ -10,14 +10,18 @@ export function PokemonCard( { name, image, type1, id }) {
     const setTypeColor = () => {
         switch (type1) {
             case "grass":
+                cardColor1 = "#59c37c";
+                cardColor2 = "#60b953";
+                typeColor = "#fff";
+            break
             case "bug":
-                cardColor1 = "#8dec68";
-                cardColor2 = "#48c954";
+                cardColor1 = "#aec93b";
+                cardColor2 = "#90c12d";
                 typeColor = "#fff";
             break
             case "fire":
-                cardColor1 = "#ecbd68";
-                cardColor2 = "#c97648";
+                cardColor1 = "#fdb862";
+                cardColor2 = "#ff9c54";
                 typeColor = "#fff";
             break
             case "water":
@@ -31,8 +35,8 @@ export function PokemonCard( { name, image, type1, id }) {
                 typeColor = "#fff";
             break
             case "electric":
-                cardColor1 = "#f0f212";
-                cardColor2 = "#9d9a17";
+                cardColor1 = "#f9e174";
+                cardColor2 = "#f4d23d";
                 typeColor = "#000";
             break
             case "ground":

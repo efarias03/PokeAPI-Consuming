@@ -20,7 +20,6 @@ export const Home = () => {
         var response = axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then((res) => setPokemons(res));
         
     };
-    console.log(pokemons);
     
     const pokemonsFilter = (name) => {
         if (name === "") {
@@ -33,12 +32,13 @@ export const Home = () => {
                 filteredPokemons.push(pokemons[i]);
             }
         }
+        setPokemons(filteredPokemons);
     }
 
 
 
     return (
-        <div>
+        <div className="bg">
             <Navbar pokemonsFilter={pokemonsFilter} />
             <div className="main-content">
                 <div className="grid-container">
