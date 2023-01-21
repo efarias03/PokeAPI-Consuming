@@ -6,7 +6,7 @@ import "./index.css";
 
 export const Home = () => {
     const [pokemons, setPokemons] = useState([]);
-    
+
 
     useEffect(() => {
         getPokemons();
@@ -14,7 +14,7 @@ export const Home = () => {
 
     const getPokemons = () => {
         var endpoints = [];
-        for (var i = 1; i < 101; i++) {
+        for (var i = 1; i < 201; i++) {
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
         }
 
@@ -43,7 +43,6 @@ export const Home = () => {
             <Navbar pokemonsFilter={pokemonsFilter} />
             <div className="main-content">
                 <div className="grid-container">
-                    <div className="inner-grid">
                         <ul className="pokemons-grid">
                             {pokemons.map((pokemon, key) => (
                                 <li key={key}>
@@ -51,7 +50,6 @@ export const Home = () => {
                                 </li>
                             ))}
                         </ul>
-                    </div>
                 </div>
             </div>
         </div>

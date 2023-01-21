@@ -17,9 +17,10 @@
 .card-content img {
   width: auto;
   height: 6rem;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.527));
+  -ms-interpolation-mode: nearest-neighbor;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: pixelated;
+  filter: drop-shadow(0 0 5px rgb(0, 0, 0));
   transition: 0.6s ease;
 }
 .card-content .pokemon-id {
@@ -73,7 +74,7 @@
   z-index: 4;
 }
 .card-content:hover img {
-  filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.527));
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.26));
   transform: translateZ(5px);
   transition: 0.4s ease;
 }
