@@ -1,7 +1,7 @@
 @use "../../styles/base";
 
-
 .card-content {
+    position: sticky;
     @include base.flex-center($direction: column);
     background: #f2f2f2;
     min-width: 10rem;
@@ -11,14 +11,17 @@
     box-shadow:
         12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
         100px 100px 80px rgba(0, 0, 0, 0.07);
-    transition: .6 ease;
+    transition: .4s ease;
 
+    perspective: 10px;
 
     img {
         width: auto;
-        height: 60%;
+        height: 6rem;
+        backface-visibility: hidden;
 
-        filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.527));
+        filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.527));
+        transition: .6s ease;
     }
 
     .pokemon-id {
@@ -32,6 +35,7 @@
 
         color: transparent;
         -webkit-text-stroke: 2px #000;
+        transition: .6s ease
     }
 
     .card-description {
@@ -46,6 +50,7 @@
             top: -10px;
             font-size: large;
             text-transform: capitalize;
+            transition: .6s ease;
         }
 
         .pokemon-type {
@@ -54,6 +59,47 @@
             text-transform: uppercase;
 
             filter: drop-shadow(0 0 13px #000000);
+            transition: .6s ease;
+        }
+    }
+
+    .backface-details {
+        opacity: 0;
+        backface-visibility: visible;
+        transform: rotateY(180deg);
+        position: absolute;
+    }
+}
+
+.card-content:hover {
+    position: sticky;
+    transform: scale(1.5);
+    transition: .8s ease;
+    cursor: pointer;
+
+    z-index: 4;
+
+    img {
+        filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.527));
+        transform: translateZ(5px);
+        transition: .4s ease;
+    }
+
+    .pokemon-id {
+        filter: blur(.6px);
+        transition: .6s ease;
+    }
+
+    .card-description {
+
+        .pokemon-name {
+            transform: scale(1.5);
+            transition: .6s ease;
+        }
+
+        .pokemon-type {
+            transform: scale(.8);
+            transition: .6s ease;
         }
     }
 }

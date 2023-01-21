@@ -6,6 +6,7 @@ import "./index.css";
 
 export const Home = () => {
     const [pokemons, setPokemons] = useState([]);
+    
 
     useEffect(() => {
         getPokemons();
@@ -18,9 +19,9 @@ export const Home = () => {
         }
 
         var response = axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then((res) => setPokemons(res));
-        
+
     };
-    
+
     const pokemonsFilter = (name) => {
         if (name === "") {
             getPokemons();
@@ -28,7 +29,7 @@ export const Home = () => {
         var filteredPokemons = [];
 
         for (var i in pokemons) {
-            if (pokemons[i].data.name.includes(name)) {
+            if (pokemons[i].data.name.includes(name.toLowerCase())) {
                 filteredPokemons.push(pokemons[i]);
             }
         }
@@ -38,17 +39,19 @@ export const Home = () => {
 
 
     return (
-        <div className="bg">
+        <div>
             <Navbar pokemonsFilter={pokemonsFilter} />
             <div className="main-content">
                 <div className="grid-container">
-                    <ul className="pokemons-grid">
-                        {pokemons.map((pokemon, key) => (
-                            <li key={key}>
-                                <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} id={pokemon.data.id} type1={pokemon.data.types[0].type.name}  />
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="inner-grid">
+                        <ul className="pokemons-grid">
+                            {pokemons.map((pokemon, key) => (
+                                <li key={key}>
+                                    <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} id={pokemon.data.id} type1={pokemon.data.types[0].type.name} />
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

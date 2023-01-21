@@ -89,7 +89,7 @@ export function PokemonCard( { name, image, type1, id }) {
     return (
         <Div className="card-content" type1={type1}>
             <span className="pokemon-id">
-                {id}
+                {`#${id}`}
             </span>
             <img src={image} alt={`${name} Image`} loading="lazy" />
             <div className="card-description">
