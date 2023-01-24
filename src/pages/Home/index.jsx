@@ -14,11 +14,11 @@ export const Home = () => {
 
     const getPokemons = () => {
         var endpoints = [];
-        for (var i = 1; i < 201; i++) {
+        for (var i = 1; i < 21; i++) {
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
         }
 
-        var response = axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then((res) => setPokemons(res));
+        var response = axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then((res) => setPokemons(res)).catch((err) => console.log(err));
 
     };
 
@@ -36,24 +36,36 @@ export const Home = () => {
         setPokemons(filteredPokemons);
     }
 
-
-
-    return (
-        <div>
-            <Navbar pokemonsFilter={pokemonsFilter} />
-            <div className="main-content">
-                <div className="grid-container">
-                        <ul className="pokemons-grid">
-                            {pokemons.map((pokemon, key) => (
-                                <li key={key}>
-                                    <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} id={pokemon.data.id} type1={pokemon.data.types[0].type.name} />
-                                </li>
-                            ))}
-                        </ul>
+    if (pokemons.length == 0) {
+        return (
+            <div className="wrapper">
+                <Navbar pokemonsFilter={pokemonsFilter} />
+                <div className="main-content">
+                    <div className="grid-container">
+                            <h1 className="loader">loading...</h1>
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
 
+    else {
+        return (
+            <div className="wrapper">
+                <Navbar pokemonsFilter={pokemonsFilter} />
+                <div className="main-content">
+                    <div className="grid-container">
+                            <ul className="pokemons-grid">
+                                {pokemons.map((pokemon, key) => (
+                                    <li key={key}>
+                                        <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} id={pokemon.data.id} type1={pokemon.data.types[0].type.name} />
+                                    </li>
+                                ))}
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 
 }

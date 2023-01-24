@@ -20,7 +20,14 @@
             grid-gap: 10px;
         }
     }
+
+    .loader {
+        position: relative;
+        top: 50vh;
+        left: 50vw;
+    }
 }
+
 
 @media (min-width: 375px) {
     .main-content {
@@ -76,6 +83,42 @@
                 grid-template-columns: repeat(4, 1fr);
                 padding: 10rem 10px;
                 margin: 0 auto;
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1300px) {
+    .card-content:hover {
+        position: sticky;
+        transform: scale(1.5);
+        transition: .8s ease;
+        cursor: pointer;
+    
+        z-index: 4;
+    
+        img {
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.26));
+            transform: translateZ(5px);
+            transition: .4s ease;
+        }
+    
+        .pokemon-id {
+            filter: blur(.6px);
+            transition: .6s ease;
+        }
+    
+        .card-description {
+    
+            .pokemon-name {
+                transform: scale(1.15);
+                transition: .6s ease;
+            }
+    
+            .pokemon-type {
+                transform: scale(.8);
+                transition: .6s ease;
             }
         }
     }
