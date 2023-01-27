@@ -9,6 +9,17 @@
 }
 
 
+@keyframes pageLoader {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-16px);
+    }
+}
+
+
 
 .main-content {
     display: flex;
@@ -109,9 +120,29 @@
     }
 
     .loader {
+        display: flex;
+        justify-content: center;
+        
         position: relative;
         top: 50vh;
-        left: 50vw;
+        left: 0;
+
+        width: 20rem;
+
+        .pokemon-svg {
+
+            img {
+                animation: pageLoader .5s ease alternate infinite;
+            }
+
+            .squirtle {
+                animation-delay: .2s;
+            }
+
+            .charmander {
+                animation-delay: .3s;
+            }
+        }
     }
 }
 

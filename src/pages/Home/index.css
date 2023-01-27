@@ -14,6 +14,22 @@
     transform: rotateZ(2turn);
   }
 }
+@-webkit-keyframes pageLoader {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-16px);
+  }
+}
+@keyframes pageLoader {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-16px);
+  }
+}
 .main-content {
   display: flex;
   justify-content: center;
@@ -85,9 +101,24 @@
           animation: 1s ease-in-out 1s infinite loadingAnimation;
 }
 .main-content .loader {
+  display: flex;
+  justify-content: center;
   position: relative;
   top: 50vh;
-  left: 50vw;
+  left: 0;
+  width: 20rem;
+}
+.main-content .loader .pokemon-svg img {
+  -webkit-animation: pageLoader 0.5s ease alternate infinite;
+          animation: pageLoader 0.5s ease alternate infinite;
+}
+.main-content .loader .pokemon-svg .squirtle {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.main-content .loader .pokemon-svg .charmander {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
 }
 
 @media (min-width: 375px) {

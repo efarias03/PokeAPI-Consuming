@@ -65,8 +65,12 @@ export const Home = () => {
             <div className="wrapper">
                 <Navbar pokemonsFilter={pokemonsFilter} />
                 <div className="main-content">
-                    <div className="grid-container">
-                        <h1 id="load-more-observer" className="loader">loading...</h1>
+                    <div className="loader" id="load-more-observer">
+                        <div className="pokemon-svg">
+                            <img className="bulbasaur" src="https://img.icons8.com/color/48/null/bullbasaur.png" alt="Bulbasaur icon" />
+                            <img className="squirtle" src="https://img.icons8.com/color/48/null/squirtle.png" alt="Squirtle icon" />
+                            <img className="charmander" src="https://img.icons8.com/color/48/null/charmander.png" alt="Charmander icon" />
+                        </div>
                     </div>
                 </div>
             </div>
