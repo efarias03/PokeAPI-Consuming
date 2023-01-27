@@ -73,6 +73,10 @@
 
             transition: .6s ease;
         }
+
+        img.loading {
+            transform: rotateZ(2turn);
+        }
     }
 
     .load-more-div:hover {

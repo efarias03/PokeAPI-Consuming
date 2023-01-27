@@ -53,6 +53,9 @@
   border-radius: 50%;
   transition: 0.6s ease;
 }
+.main-content .load-more-div img.loading {
+  transform: rotateZ(2turn);
+}
 .main-content .load-more-div:hover {
   background-color: #ff0217;
   transition: 0.6s ease;
