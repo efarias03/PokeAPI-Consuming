@@ -1,3 +1,15 @@
+@keyframes loadingAnimation {
+    from {
+        transform: rotateZ(0);
+    }
+
+    to {
+        transform: rotateZ(2turn);
+    }
+}
+
+
+
 .main-content {
     display: flex;
     justify-content: center;
@@ -73,10 +85,6 @@
 
             transition: .6s ease;
         }
-
-        img.loading {
-            transform: rotateZ(2turn);
-        }
     }
 
     .load-more-div:hover {
@@ -90,6 +98,13 @@
 
         img {
             transform: rotateZ(2turn);
+        }
+    }
+
+    .load-more-div.loading {
+
+        img {
+            animation: 1s ease-in-out 1s infinite loadingAnimation;
         }
     }
 

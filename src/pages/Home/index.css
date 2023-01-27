@@ -1,3 +1,19 @@
+@-webkit-keyframes loadingAnimation {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(2turn);
+  }
+}
+@keyframes loadingAnimation {
+  from {
+    transform: rotateZ(0);
+  }
+  to {
+    transform: rotateZ(2turn);
+  }
+}
 .main-content {
   display: flex;
   justify-content: center;
@@ -53,9 +69,6 @@
   border-radius: 50%;
   transition: 0.6s ease;
 }
-.main-content .load-more-div img.loading {
-  transform: rotateZ(2turn);
-}
 .main-content .load-more-div:hover {
   background-color: #ff0217;
   transition: 0.6s ease;
@@ -66,6 +79,10 @@
 }
 .main-content .load-more-div:hover img {
   transform: rotateZ(2turn);
+}
+.main-content .load-more-div.loading img {
+  -webkit-animation: 1s ease-in-out 1s infinite loadingAnimation;
+          animation: 1s ease-in-out 1s infinite loadingAnimation;
 }
 .main-content .loader {
   position: relative;

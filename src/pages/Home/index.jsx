@@ -12,6 +12,19 @@ export const Home = () => {
         getPokemons();
     }, []);
 
+    useEffect(() => {
+        const intersectionObserver = new IntersectionObserver((entries) => {
+            if (pokemons.length > 150 && entries.some((entry) => entry.isIntersecting)) {
+                console.log("Cheguei", entries);
+                getMorePokemons();
+            }
+        });
+
+        intersectionObserver.observe(document.querySelector("#load-more-observer"));
+
+        return () => intersectionObserver.disconnect();
+    });
+
 
     const getPokemons = () => {
         var endpoints = [];
@@ -47,20 +60,20 @@ export const Home = () => {
         setPokemons(filteredPokemons);
     }
 
-    if (pokemons.length == 0) {
+    if (pokemons.length < 150) {
         return (
             <div className="wrapper">
                 <Navbar pokemonsFilter={pokemonsFilter} />
                 <div className="main-content">
                     <div className="grid-container">
-                        <h1 className="loader">loading...</h1>
+                        <h1 id="load-more-observer" className="loader">loading...</h1>
                     </div>
                 </div>
             </div>
         )
     }
 
-    else if (pokemons.length >= 40) {
+    else{
         return (
             <div className="wrapper">
                 <Navbar pokemonsFilter={pokemonsFilter} />
@@ -74,13 +87,14 @@ export const Home = () => {
                             ))}
                         </ul>
                     </div>
-                    <div className="load-more-div">
-                        <a onClick={getMorePokemons}> Load More Pokemons! </a>
+                    <div id="load-more-observer" className={`load-more-div ${pokemons.length > 150 ? "loading" : ""}`}>
+                        <a onClick={getMorePokemons}>{`${pokemons.length <= 150 ? "Load More Pokemons!" : "Loading!" }`}</a>
                         <img src="https://img.icons8.com/fluency/48/null/pokeball.png" />
                     </div>
                 </div>
             </div>
         )
     }
+
 
 }

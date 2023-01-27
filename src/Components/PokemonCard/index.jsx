@@ -91,7 +91,7 @@ export function PokemonCard( { name, image, type1, id }) {
             <span className="pokemon-id">
                 {`#${id}`}
             </span>
-            <img src={image} alt={`${name} Image`} loading="lazy" />
+            <img src={image} alt={`${name} Image`} loading="lazy" draggable="false" />
             <div className="card-description">
                 <P className="pokemon-name">
                     {name}
