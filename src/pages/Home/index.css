@@ -1,4 +1,8 @@
 .main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height: 100%;
   width: 100%;
 }
@@ -15,6 +19,50 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 10px;
+}
+.main-content .load-more-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 5rem;
+  margin-top: 2rem;
+  padding: 6px;
+  width: 12rem;
+  background-color: #f34553;
+  text-align: center;
+  border-radius: 20px 10px;
+  cursor: pointer;
+  transition: 0.6s ease;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.26), 100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+.main-content .load-more-div a {
+  width: 100%;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+  transition: 0.6s ease;
+}
+.main-content .load-more-div img {
+  width: 35px;
+  position: absolute;
+  left: 41.5%;
+  top: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.6s ease;
+}
+.main-content .load-more-div:hover {
+  background-color: #ff0217;
+  transition: 0.6s ease;
+}
+.main-content .load-more-div:hover a {
+  letter-spacing: 0.05rem;
+  transition: 0.6s ease;
+}
+.main-content .load-more-div:hover img {
+  transform: rotateZ(2turn);
 }
 .main-content .loader {
   position: relative;

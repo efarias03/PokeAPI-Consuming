@@ -6,20 +6,30 @@ import "./index.css";
 
 export const Home = () => {
     const [pokemons, setPokemons] = useState([]);
-
+    const [lastEndpoint, setLastEndpoint] = useState();
 
     useEffect(() => {
         getPokemons();
     }, []);
 
+
     const getPokemons = () => {
         var endpoints = [];
-        for (var i = 1; i < 21; i++) {
+        for (var i = 1; i < 101; i++) {
+            endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
+            
+        }
+
+        var response = axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then((res) => setPokemons(res)).catch((err) => console.log(err));
+    };
+
+    const getMorePokemons = () => {
+        var endpoints = [];
+        for (var i = 1; i < pokemons.length + 41; i++) {
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
         }
 
         var response = axios.all(endpoints.map((endpoint) => axios.get(endpoint))).then((res) => setPokemons(res)).catch((err) => console.log(err));
-
     };
 
     const pokemonsFilter = (name) => {
@@ -42,26 +52,30 @@ export const Home = () => {
                 <Navbar pokemonsFilter={pokemonsFilter} />
                 <div className="main-content">
                     <div className="grid-container">
-                            <h1 className="loader">loading...</h1>
+                        <h1 className="loader">loading...</h1>
                     </div>
                 </div>
             </div>
         )
     }
 
-    else {
+    else if (pokemons.length >= 40) {
         return (
             <div className="wrapper">
                 <Navbar pokemonsFilter={pokemonsFilter} />
                 <div className="main-content">
                     <div className="grid-container">
-                            <ul className="pokemons-grid">
-                                {pokemons.map((pokemon, key) => (
-                                    <li key={key}>
-                                        <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} id={pokemon.data.id} type1={pokemon.data.types[0].type.name} />
-                                    </li>
-                                ))}
-                            </ul>
+                        <ul className="pokemons-grid">
+                            {pokemons.map((pokemon, key) => (
+                                <li key={key}>
+                                    <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} id={pokemon.data.id} type1={pokemon.data.types[0].type.name} />
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="load-more-div">
+                        <a onClick={getMorePokemons}> Load More Pokemons! </a>
+                        <img src="https://img.icons8.com/fluency/48/null/pokeball.png" />
                     </div>
                 </div>
             </div>
