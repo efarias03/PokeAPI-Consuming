@@ -79,6 +79,11 @@ export function PokemonCard( { name, image, type1, id }) {
                 cardColor2 = "#47464e";
                 typeColor = "#fff";
             break
+            case "steel":
+                cardColor1 = "#589ea2";
+                cardColor2 = "#528598";
+                typeColor = "#fff";
+            break
 
             default:
                 break;
