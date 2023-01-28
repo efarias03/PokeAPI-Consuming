@@ -6,7 +6,6 @@ import "./index.css";
 
 export const Home = () => {
     const [pokemons, setPokemons] = useState([]);
-    const [lastEndpoint, setLastEndpoint] = useState();
 
     useEffect(() => {
         getPokemons();
@@ -89,7 +88,7 @@ export const Home = () => {
                         <ul className="pokemons-grid">
                             {pokemons.map((pokemon, key) => (
                                 <li key={key}>
-                                    <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} id={pokemon.data.id} type1={pokemon.data.types[0].type.name} />
+                                    <PokemonCard name={pokemon.data.name} image={`${pokemon.data.sprites.front_default != null ? pokemon.data.sprites.front_default : pokemon.data.sprites.other["official-artwork"].front_default}`} id={pokemon.data.id} type1={pokemon.data.types[0].type.name} />
                                 </li>
                             ))}
                         </ul>
