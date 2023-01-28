@@ -14,7 +14,6 @@ export const Home = () => {
     useEffect(() => {
         const intersectionObserver = new IntersectionObserver((entries) => {
             if (pokemons.length > 150 && entries.some((entry) => entry.isIntersecting)) {
-                console.log("Cheguei", entries);
                 getMorePokemons();
             }
         });
@@ -37,9 +36,10 @@ export const Home = () => {
 
     const getMorePokemons = () => {
         var endpoints = [];
-        for (var i = pokemons.length + 1; i < pokemons.length + 21; i++) {
+
+        for (var i = pokemons.length + 1; (pokemons.length >= 990 ? i < pokemons.length + 18 : i < pokemons.length + 21); i++) {
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
-        }
+        };
 
         
         var response = 
