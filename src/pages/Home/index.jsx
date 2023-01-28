@@ -60,7 +60,7 @@ export const Home = () => {
         setPokemons(filteredPokemons);
     }
 
-    if (pokemons.length < 150) {
+    if (pokemons.length == 0) {
         return (
             <div className="wrapper">
                 <Navbar pokemonsFilter={pokemonsFilter} />
@@ -77,7 +77,7 @@ export const Home = () => {
         )
     }
 
-    else{
+    else if (pokemons.length >= 150){
         return (
             <div className="wrapper">
                 <Navbar pokemonsFilter={pokemonsFilter} />
@@ -94,6 +94,26 @@ export const Home = () => {
                     <div id="load-more-observer" className={`load-more-div ${pokemons.length > 150 ? "loading" : ""}`}>
                         <a onClick={getMorePokemons}>{`${pokemons.length <= 150 ? "Load More Pokemons!" : "Loading!" }`}</a>
                         <img src="https://img.icons8.com/fluency/48/null/pokeball.png" />
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    else if (pokemons.length < 150 && pokemons.length > 0){
+        return (
+            <div className="wrapper">
+                <Navbar pokemonsFilter={pokemonsFilter} />
+                <div className="main-content">
+                    <div className="grid-container">
+                        <ul className="pokemons-grid">
+                            {pokemons.map((pokemon, key) => (
+                                <li key={key}>
+                                    <PokemonCard name={pokemon.data.name} image={pokemon.data.sprites.front_default} id={pokemon.data.id} type1={pokemon.data.types[0].type.name} />
+                                </li>
+                            ))}
+                            <li id="load-more-observer" />
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -85,10 +85,6 @@
   border-radius: 50%;
   transition: 0.6s ease;
 }
-.main-content .load-more-div:hover {
-  background-color: #ff0217;
-  transition: 0.6s ease;
-}
 .main-content .load-more-div:hover a {
   letter-spacing: 0.05rem;
   transition: 0.6s ease;
@@ -148,33 +144,6 @@
     grid-template-columns: repeat(4, 1fr);
     padding: 10rem 10px;
     margin: 0 auto;
-  }
-}
-@media (min-width: 1300px) {
-  .card-content:hover {
-    position: -webkit-sticky;
-    position: sticky;
-    transform: scale(1.5);
-    transition: 0.8s ease;
-    cursor: pointer;
-    z-index: 4;
-  }
-  .card-content:hover img {
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.26));
-    transform: translateZ(5px);
-    transition: 0.4s ease;
-  }
-  .card-content:hover .pokemon-id {
-    filter: blur(0.6px);
-    transition: 0.6s ease;
-  }
-  .card-content:hover .card-description .pokemon-name {
-    transform: scale(1.15);
-    transition: 0.6s ease;
-  }
-  .card-content:hover .card-description .pokemon-type {
-    transform: scale(0.8);
-    transition: 0.6s ease;
   }
 }
 @media (min-width: 2560px) {

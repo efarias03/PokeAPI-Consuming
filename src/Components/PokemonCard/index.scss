@@ -3,7 +3,8 @@
 .card-content {
     position: sticky;
     @include base.flex-center($direction: column);
-    background: #f2f2f2;
+    background: rgb(162,162,158);
+    background: linear-gradient(180deg, rgb(199, 199, 198) 37%, rgba(147,152,161,1) 100%);
     min-width: 10rem;
     max-width: 25rem;
     height: 10rem;
@@ -62,11 +63,34 @@
             transition: .6s ease;
         }
     }
+}
 
-    .backface-details {
-        opacity: 0;
-        backface-visibility: visible;
-        transform: rotateY(180deg);
-        position: absolute;
+@media (min-width: 1300px) {
+    .card-content:hover {
+        position: sticky;
+        transform: scale(1.5);
+        transition: .8s ease;
+        cursor: pointer;
+
+        z-index: 4;
+
+        img {
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.26));
+            transform: translateZ(5px);
+            transition: .4s ease;
+        }
+
+        .card-description {
+
+            .pokemon-name {
+                transform: scale(1.15);
+                transition: .6s ease;
+            }
+
+            .pokemon-type {
+                transform: scale(.8);
+                transition: .6s ease;
+            }
+        }
     }
 }

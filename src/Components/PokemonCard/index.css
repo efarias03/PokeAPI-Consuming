@@ -5,7 +5,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #f2f2f2;
+  background: rgb(162, 162, 158);
+  background: linear-gradient(180deg, rgb(199, 199, 198) 37%, rgb(147, 152, 161) 100%);
   min-width: 10rem;
   max-width: 25rem;
   height: 10rem;
@@ -57,10 +58,27 @@
   filter: drop-shadow(0 0 13px #000000);
   transition: 0.6s ease;
 }
-.card-content .backface-details {
-  opacity: 0;
-  -webkit-backface-visibility: visible;
-          backface-visibility: visible;
-  transform: rotateY(180deg);
-  position: absolute;
+
+@media (min-width: 1300px) {
+  .card-content:hover {
+    position: -webkit-sticky;
+    position: sticky;
+    transform: scale(1.5);
+    transition: 0.8s ease;
+    cursor: pointer;
+    z-index: 4;
+  }
+  .card-content:hover img {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.26));
+    transform: translateZ(5px);
+    transition: 0.4s ease;
+  }
+  .card-content:hover .card-description .pokemon-name {
+    transform: scale(1.15);
+    transition: 0.6s ease;
+  }
+  .card-content:hover .card-description .pokemon-type {
+    transform: scale(0.8);
+    transition: 0.6s ease;
+  }
 }/*# sourceMappingURL=index.css.map */
